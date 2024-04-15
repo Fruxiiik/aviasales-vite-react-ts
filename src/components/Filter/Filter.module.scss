@@ -1,0 +1,33 @@
+.filter {
+  grid-area: filter;
+  min-width: 502px;
+  display: flex;
+  height: 50px;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #fff;
+  &__element {
+    background: #FFF;
+    border: 1px solid #dfe5ec;
+    line-height: 50px;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    &:hover {
+      background: #2196f3;
+      border: 0;
+      color: #fff;
+      transition: all .3s ease;
+    }
+  }
+
+  &__low-price {
+    //border-right: 0;
+    border-radius: 5px 0 0 5px;
+  }
+  &__faster {
+    border-left: 0;
+    border-radius: 0 5px 5px 0;
+  }
+}

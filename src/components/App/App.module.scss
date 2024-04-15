@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+* { // :after, :before ?
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+:root {
+  background: #F3F7FA;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #4a4a4a;
+  min-width: 100vh;
+}
+
+.App {
+}
+
+.app_wrapper {
+  min-height: 100vh;
+  max-width: 754px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-rows: 52px auto;
+  gap: 20px;
+  grid-template-areas:
+    "sidebar filter"
+    "sidebar tickets";
+}
