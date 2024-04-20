@@ -18,5 +18,10 @@
     letter-spacing: 0.5px;
     text-transform: uppercase;
   }
+  &__loading {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
 }
 

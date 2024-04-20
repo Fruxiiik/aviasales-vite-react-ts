@@ -11,7 +11,6 @@
   & label {
     display: block;
     padding: 10px 20px 10px 50px;
-    //margin-left: 30px;
     position: relative;
     cursor: pointer;
     user-select: none;
@@ -31,18 +30,6 @@
     margin: 0 -20px;
     user-select: none;
   }
-  //&__input {
-  //  &--visually-hidden {
-  //    position: absolute;
-  //    width: 1px;
-  //    height: 1px;
-  //    margin: -1px;
-  //    border: 0;
-  //    padding: 0;
-  //    clip: rect(0 0 0 0);
-  //    overflow: hidden;
-  //  }
-  //}
 }
 .input {
   &--visually-hidden {
@@ -58,12 +45,15 @@
 }
 .checker {
   position: absolute;
-  //top: 2px;
   width: 20px;
   height: 20px;
   margin-left: -30px;
   background-image: url(@images/checkbox-off.svg);
 }
 .input:checked + .checker {
-  background-image: url(@images/checkbox-on.svg)
+  background-image: url(@images/checkbox-on.svg);
+}
+
+.labelActive {
+  background-color: #F1FCFF;
 }
