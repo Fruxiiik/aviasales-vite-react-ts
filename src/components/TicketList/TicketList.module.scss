@@ -17,6 +17,14 @@
     line-height: 20px; /* 166.667% */
     letter-spacing: 0.5px;
     text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    &:hover {
+      transform: scale(1.01)
+    }
+    &:active {
+      transform: scale(0.98)
+    }
   }
   &__loading {
     display: flex;
