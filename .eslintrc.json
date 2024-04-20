@@ -74,7 +74,7 @@
     "import/no-extraneous-dependencies": "off",
     "react/require-default-props": "off",
     "react/jsx-props-no-spreading": "off",
-    "@typescript-eslint/default-param-last": "off", // ОТКЛЮЧИТЬ !!!
+//    "@typescript-eslint/default-param-last": "off", // ОТКЛЮЧИТЬ !!!
     "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-expressions": "off",
