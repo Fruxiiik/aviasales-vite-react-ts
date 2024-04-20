@@ -9,7 +9,6 @@ import classes from './Filter.module.scss'
 export const Filter: React.FC = () => {
   const sortingState = useSelector((state: RootState) => state.sorting.currentSort)
   const dispatch = useDispatch()
-  console.log('sortingState: ', sortingState)
   return (
     <div className={classes.filter}>
       <button

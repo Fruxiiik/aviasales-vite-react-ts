@@ -21,7 +21,7 @@ export interface Ticket {
 export interface TicketsState {
   tickets: Ticket[]
   loading: boolean
-  error: null | string
+  error: null | string | undefined
   token: null | string
   stop: boolean
 }
