@@ -36,7 +36,7 @@ export const Ticket: React.FC<TicketProps> = ({ data }) => {
             </div>
             <div className={`${classes.title__grey} ${classes.part__transfers}`}>
               {formatStops(segment.stops)}
-              <div className={classes.title}>{segment.stops.join(', ')}</div>
+              <div className={classes.title}>{segment.stops.length ? segment.stops.join(', ') : '-'}</div>
             </div>
           </div>
         ))}
