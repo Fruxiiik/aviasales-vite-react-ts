@@ -15,7 +15,7 @@ export const Ticket: React.FC<TicketProps> = ({ data }) => {
   return (
     <div className={classes.ticket}>
       <header className={classes.ticket__header}>
-        <div className={classes.ticket__price}>{`${price}р`}</div>
+        <div className={classes.ticket__price}>{`${price.toLocaleString('ru')} р`}</div>
         <div className={classes.ticket__logo}>
           <img className={classes.ticket__logo} src={`https://pics.avs.io/99/36/${data.carrier}.svg`} alt="logo" />
         </div>
@@ -32,7 +32,7 @@ export const Ticket: React.FC<TicketProps> = ({ data }) => {
             </div>
             <div className={`${classes.title__grey} ${classes.part__duration}`}>
               В пути
-              <div className={classes.title}>{formatDuration(segment.duration)}</div>
+              <div className={`${classes.title} ${classes.title__time}`}>{formatDuration(segment.duration)}</div>
             </div>
             <div className={`${classes.title__grey} ${classes.part__transfers}`}>
               {formatStops(segment.stops)}
