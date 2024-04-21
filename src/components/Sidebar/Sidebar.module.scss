@@ -1,12 +1,12 @@
 .sidebar {
   grid-area: sidebar;
-  color: #4a4a4a;
+  color: var(--text-grey-color);
   font-size: 13px;
   padding: 20px;
   width: 232px;
   height: 252px;
   border-radius: 5px;
-  background: #FFF;
+  background: var(--background-color-white);
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10);
   & label {
     display: block;
@@ -15,7 +15,7 @@
     cursor: pointer;
     user-select: none;
     &:hover {
-      background: #F1FCFF;
+      background: var(--background-color-sidebar-hover);
     }
   }
   & h3 {
@@ -34,6 +34,8 @@
 .input {
   &--visually-hidden {
     position: absolute;
+    z-index: -1;
+    opacity: 0;
     width: 1px;
     height: 1px;
     margin: -1px;
@@ -50,6 +52,7 @@
   margin-left: -30px;
   background-image: url(@images/checkbox-off.svg);
 }
+
 .input:checked + .checker {
   background-image: url(@images/checkbox-on.svg);
   transition: all .2s ease;

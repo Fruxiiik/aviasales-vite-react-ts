@@ -1,6 +1,6 @@
 .ticket {
   padding: 20px;
-  background: #FFF;
+  background: var(--background-color-white);
   filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.10));
   border-radius: 5px;
   font-family: "Open Sans", sans-serif;
@@ -12,7 +12,7 @@
     margin-bottom: 20px;
   }
   &__price{
-    color: #2196f3;
+    color: var(--primary-color);
     font-size: 24px;
     padding-top: 6px;
   }
@@ -36,7 +36,7 @@
 .title {
   font-size: 14px;
   line-height: 21px;
-  color: #4A4A4A;
+  color: var(--text-grey-color);
   min-width: 141px;
   &__grey {
     font-family: "Open Sans", sans-serif;
@@ -46,7 +46,7 @@
     line-height: 18px; /* 150% */
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    color: #A0B0B9;
+    color: var(--text-light-color);
   }
   &__time {
     text-transform: lowercase;

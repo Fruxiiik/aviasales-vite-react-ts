@@ -4,10 +4,10 @@
     min-width: 502px;
     margin-bottom: 50px;
     padding: 15px 20px;
-    background-color: #2196F3;
+    background-color: var(--primary-color);
     border: none;
     user-select: none;
-    color: #fff;
+    color: var(--background-color-white);
     border-radius: 5px;
     text-align: center;
     font-family: "Open Sans", sans-serif;
@@ -24,6 +24,10 @@
     }
     &:active {
       transform: scale(0.98)
+    }
+    &:focus-visible {
+        outline: 2px solid var(--primary-dark-color);
+        outline-offset: 2px;
     }
   }
   &__loading {
