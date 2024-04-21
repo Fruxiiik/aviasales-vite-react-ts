@@ -33,7 +33,7 @@ export const Sidebar: React.FC = () => {
       <h3>Количество пересадок</h3>
       <form>
         {Object.entries(filters).map(([key, value]) => (
-          <label htmlFor={key} key={key} className={`${value ? classes.labelActive : ''}`}>
+          <label htmlFor={key} key={key}>
             <input
               className={`${classes.input} ${classes['input--visually-hidden']}`}
               type="checkbox"
