@@ -52,6 +52,7 @@
 }
 .input:checked + .checker {
   background-image: url(@images/checkbox-on.svg);
+  transition: all .2s ease;
 }
 
 .labelActive {
