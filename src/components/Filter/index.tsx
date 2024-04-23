@@ -10,11 +10,12 @@ export const Filter: React.FC = () => {
   const sortingState = useSelector((state: RootState) => state.sorting.currentSort)
   const dispatch = useDispatch()
   return (
-    <div className={classes.filter}>
+    <nav className={classes.filter}>
       <button
         className={`${classes.filter__element} ${classes['filter__low-price']} ${sortingState === 'cheaper' ? classes['filter__element--active'] : ''}`}
         type="button"
         onClick={() => dispatch(setSorting('cheaper'))}
+        aria-label="Самый дешёвый"
       >
         Самый дешёвый
       </button>
@@ -22,9 +23,18 @@ export const Filter: React.FC = () => {
         className={`${classes.filter__element} ${classes.filter__faster} ${sortingState === 'faster' ? classes['filter__element--active'] : ''}`}
         type="button"
         onClick={() => dispatch(setSorting('faster'))}
+        aria-label="Самый быстрый"
       >
         Самый быстрый
       </button>
-    </div>
+      <button
+        className={`${classes.filter__element} ${classes.filter__optimal} ${sortingState === 'optimal' ? classes['filter__element--active'] : ''}`}
+        type="button"
+        onClick={() => dispatch(setSorting('optimal'))}
+        aria-label="Оптимальный"
+      >
+        Оптимальный
+      </button>
+    </nav>
   )
 }

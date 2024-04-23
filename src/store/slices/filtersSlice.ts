@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-import { FiltersState } from '@/types/filtersTypes'
+import { FiltersState } from '@/assets/types/filtersTypes'
 
 const initialState: FiltersState = {
   all: false,
-  none: false,
+  none: true,
   one: false,
   two: false,
   three: false,

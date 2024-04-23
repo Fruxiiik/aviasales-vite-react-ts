@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Ticket as TicketType } from '@/types/ticketsTypes'
+import { Ticket as TicketType } from '@/assets/types/ticketsTypes'
 import { formatTime, formatDuration, calculateEndTime } from '@/helperFunctions/time'
 import { formatStops } from '@/helperFunctions/stops'
 
@@ -13,7 +13,7 @@ interface TicketProps {
 export const Ticket: React.FC<TicketProps> = ({ data }) => {
   const { price, segments } = data
   return (
-    <div className={classes.ticket}>
+    <li className={classes.ticket}>
       <header className={classes.ticket__header}>
         <div className={classes.ticket__price}>{`${price.toLocaleString('ru')} р`}</div>
         <div className={classes.ticket__logo}>
@@ -23,7 +23,7 @@ export const Ticket: React.FC<TicketProps> = ({ data }) => {
 
       <div className={classes.ticket__data}>
         {segments.map((segment) => (
-          <div key={`${segment.origin}-${segment.destination}-${segment.date}`} className={classes.ticket__part}>
+          <section key={`${segment.origin}-${segment.destination}-${segment.date}`} className={classes.ticket__part}>
             <div className={`${classes.title__grey} ${classes.part__route}`}>
               {segment.origin} - {segment.destination}
               <div
@@ -38,9 +38,9 @@ export const Ticket: React.FC<TicketProps> = ({ data }) => {
               {formatStops(segment.stops)}
               <div className={classes.title}>{segment.stops.length ? segment.stops.join(', ') : '-'}</div>
             </div>
-          </div>
+          </section>
         ))}
       </div>
-    </div>
+    </li>
   )
 }

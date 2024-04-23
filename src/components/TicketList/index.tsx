@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import { useDispatch } from 'react-redux'
 import { Spin } from 'antd'
 
@@ -29,7 +29,7 @@ export const TicketList: React.FC = () => {
   }, [token, stop, loading])
   const [count, setCount] = useState(5)
   const sortedTickets = sort([...tickets], currentSort)
-  const filteredTickets = filter(sortedTickets || [], filters)
+  const filteredTickets = useMemo(() => filter(sortedTickets || [], filters), [sortedTickets, filters])
   function renderTickets() {
     if (filteredTickets.length) {
       return filteredTickets.map((ticket, i) => {
@@ -42,16 +42,16 @@ export const TicketList: React.FC = () => {
         )
       })
     }
-    // if (Object.values(filters).every((value) => value === false)) {
-    //   return 'Ни один из фильтров не активен.'
-    // }
+    if (Object.values(filters).every((value) => value === false)) {
+      return 'Ни один из фильтров не активен.'
+    }
     if (!stop) {
       return 'Ожидайте окончания поиска'
     }
     return 'Билетов по заданным параметрам не найдено.'
   }
   return (
-    <div className={classes.tickets}>
+    <ul className={classes.tickets}>
       {!stop && <Spin className={classes.tickets__loading} />}
       {renderTickets()}
       {filteredTickets.length > count ? (
@@ -63,6 +63,6 @@ export const TicketList: React.FC = () => {
           Показать еще 5 билетов!
         </button>
       ) : null}
-    </div>
+    </ul>
   )
 }

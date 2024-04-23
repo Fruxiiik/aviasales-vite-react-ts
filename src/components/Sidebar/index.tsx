@@ -29,7 +29,7 @@ export const Sidebar: React.FC = () => {
     dispatch(setSpecific({ filter: filterKey, checked: event.target.checked }))
   }
   return (
-    <div className={classes.sidebar}>
+    <aside className={classes.sidebar}>
       <h3>Количество пересадок</h3>
       <form>
         {Object.entries(filters).map(([key, value]) => (
@@ -46,6 +46,6 @@ export const Sidebar: React.FC = () => {
           </label>
         ))}
       </form>
-    </div>
+    </aside>
   )
 }

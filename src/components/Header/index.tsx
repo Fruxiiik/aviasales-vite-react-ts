@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { logo } from '@/images'
+import { logo } from '@/assets/images'
 
 import classes from './Header.module.scss'
 

@@ -43,6 +43,15 @@
   }
   &__faster {
     border-left: 0;
+    border-right: 0;
+
+    &:hover {
+      transition: color .3s ease, background-color .3s ease, border-bottom-color .3s ease, border-top-color .3s ease;
+      border: 1px solid var(--primary-color);
+    }
+  }
+  &__optimal {
+    //border-left: 0;
     border-radius: 0 5px 5px 0;
   }
 }

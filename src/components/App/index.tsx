@@ -12,11 +12,11 @@ const App: React.FC = () => {
     <div className={classes.App}>
       <div className={classes.app_wrapper}>
         <Header />
-        <div className={classes.main}>
+        <main className={classes.main}>
           <Sidebar />
           <Filter />
           <TicketList />
-        </div>
+        </main>
       </div>
     </div>
   )

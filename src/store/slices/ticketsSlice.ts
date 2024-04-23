@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit'
 import { message } from 'antd'
 
-import { TicketsState } from '@/types/ticketsTypes'
+import { TicketsState } from '@/assets/types/ticketsTypes'
 
 const initialState: TicketsState = {
   tickets: [],

@@ -1,5 +1,5 @@
-import { Ticket } from '@/types/ticketsTypes'
-import { FiltersState } from '@/types/filtersTypes'
+import { Ticket } from '@/assets/types/ticketsTypes'
+import { FiltersState } from '@/assets/types/filtersTypes'
 
 function filter(tickets: Ticket[], filters: FiltersState): Ticket[] {
   if (filters.all) {
@@ -19,13 +19,17 @@ function filter(tickets: Ticket[], filters: FiltersState): Ticket[] {
         return -1
     }
   }
-  const maxStops = Object.entries(filters).reduce((max, [key, value]) => {
-    if (key === 'all' || !value) return max
-    const stops = getStopsCount(key)
-    return Math.max(max, stops)
-  }, 0)
+  const selectedStops = Object.entries(filters).reduce((stops, [key, value]) => {
+    if (key === 'all' || !value) return stops
+    const count = getStopsCount(key)
+    if (count >= 0) stops.add(count)
+    return stops
+  }, new Set<number>())
 
-  return tickets.filter((ticket) => ticket.segments.every((segment) => segment.stops.length <= maxStops))
+  return tickets.filter((ticket) => {
+    const ticketStopsCounts = ticket.segments.map((segment) => segment.stops.length)
+    return ticketStopsCounts.every((count) => selectedStops.has(count))
+  })
 }
 
 export default filter
